@@ -40,6 +40,10 @@ website/
 Everything in `archive/` is the older single-file version of this site. It is kept so nothing is
 lost, but it is **not** part of the current website and nothing in `src/` depends on it.
 
+> Note: `archive/Website.html` expects its photos to sit in the same folder, so if you open it the
+> pictures show as grey placeholders. The images themselves are safe in `archive/images/`. This is
+> exactly the problem the new structure fixes.
+
 ---
 
 ## Running it
@@ -57,6 +61,10 @@ Then open <http://localhost:8000>.
 
 Both work. The second is worth doing once before any presentation, because it is closer to how the
 site behaves when hosted.
+
+> One small difference: when opened by double-click, some browsers block a page from remembering
+> things between visits, so the shopping bag may empty on refresh. Served over HTTP it always
+> remembers. Nothing else changes.
 
 ---
 
