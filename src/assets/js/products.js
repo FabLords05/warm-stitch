@@ -120,7 +120,7 @@ WS.products = [
     name: 'CHANGE Status Quo Shirt & Shorts Set',
     gender: 'men',
     type: 'set',
-    image: null,
+    image: 'assets/images/products/change-status-quo-set.jpg',
     prices: { S: 549, M: 649, L: 749, XL: 999 },
     description: 'A stylish two-piece casual set featuring a short-sleeve button-up shirt with a black-and-gray color combination and matching gray shorts. The set has a clean, modern design with a “CHANGE status quo” detail, making it suitable for casual outings and everyday wear.'
   },
