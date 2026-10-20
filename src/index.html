@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Stitch — Step Into Confidence</title>
+    <meta name="description" content="Warm Stitch is a premium apparel brand from Cagayan de Oro offering comfortable, high-quality and eco-conscious clothing for everyday wear.">
+
+    <link rel="icon" href="assets/images/logo/warm-stitch-logo.jpg">
+
+    <!-- Tailwind CSS (CDN build — no toolchain required) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col bg-brand-50 text-brand-800 selection:bg-brand-300">
+
+<!-- ====================================================== HEADER / NAVBAR -->
+<header class="sticky top-0 z-40 bg-brand-50/95 backdrop-blur-md border-b border-brand-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-24 gap-4">
+
+            <!-- Brand logo (no wordmark — the mark carries the identity) -->
+            <a href="#home" class="flex-shrink-0 group" aria-label="Warm Stitch — home">
+                <img src="assets/images/logo/warm-stitch-logo.jpg"
+                     alt="Warm Stitch"
+                     class="h-14 w-14 sm:h-16 sm:w-16 object-cover rounded-full border-2 border-brand-300 group-hover:border-brand-600 transition shadow-sm">
+            </a>
+
+            <!-- Desktop navigation -->
+            <nav class="hidden lg:flex items-center gap-7 text-xs uppercase font-semibold tracking-widest">
+                <a href="#home" class="text-brand-700 hover:text-brand-900 transition">Home</a>
+                <a href="#catalog" class="text-brand-700 hover:text-brand-900 transition">Catalog</a>
+                <a href="#about" class="text-brand-700 hover:text-brand-900 transition">About Us</a>
+                <a href="#payment-delivery" class="text-brand-700 hover:text-brand-900 transition">Payment &amp; Delivery</a>
+                <a href="#contact" class="text-brand-700 hover:text-brand-900 transition">Contact Us</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Social shortcuts -->
+                <div class="hidden xl:flex items-center gap-1 text-brand-600 pr-3 border-r border-brand-200">
+                    <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" rel="noopener" title="Facebook" class="p-2 hover:text-brand-900 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==" target="_blank" rel="noopener" title="Instagram" class="p-2 hover:text-brand-900 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@warmstitch4?_r=1&amp;_t=ZS-9ALVOH5hprQ" target="_blank" rel="noopener" title="TikTok" class="p-2 hover:text-brand-900 transition"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+
+                <!-- Search -->
+                <div class="relative hidden sm:block w-36 md:w-48 lg:w-56">
+                    <label for="searchInput" class="sr-only">Search the collection</label>
+                    <input type="search" id="searchInput" placeholder="Search collection..."
+                           class="w-full bg-white border border-brand-300 rounded-full py-2 pl-9 pr-3 text-xs text-brand-900 placeholder-brand-600 focus:outline-none focus:border-brand-600 transition">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-[11px] text-brand-600 pointer-events-none"></i>
+                </div>
+
+                <!-- Shopping bag -->
+                <button type="button" data-action="cart-open" aria-label="Open shopping bag"
+                        class="relative p-3 rounded-full bg-white border border-brand-300 hover:border-brand-600 transition text-brand-800">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-900 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-50 hidden">0</span>
+                </button>
+
+                <!-- Mobile menu -->
+                <button type="button" data-action="menu-toggle" aria-label="Toggle navigation menu"
+                        class="lg:hidden p-2.5 rounded-lg text-brand-800 hover:bg-brand-100 transition">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-50 border-b border-brand-200 px-6 py-6 space-y-4">
+        <label for="mobileSearchInput" class="sr-only">Search the collection</label>
+        <input type="search" id="mobileSearchInput" placeholder="Search collection..."
+               class="w-full bg-white border border-brand-300 rounded-xl py-2.5 px-4 text-xs text-brand-900 placeholder-brand-600 focus:outline-none focus:border-brand-600">
+        <a href="#home" data-action="nav-link" class="block text-brand-800 hover:text-brand-600 py-1 text-sm uppercase tracking-wider font-semibold">Home</a>
+        <a href="#catalog" data-action="nav-link" class="block text-brand-800 hover:text-brand-600 py-1 text-sm uppercase tracking-wider font-semibold">Catalog</a>
+        <a href="#about" data-action="nav-link" class="block text-brand-800 hover:text-brand-600 py-1 text-sm uppercase tracking-wider font-semibold">About Us</a>
+        <a href="#payment-delivery" data-action="nav-link" class="block text-brand-800 hover:text-brand-600 py-1 text-sm uppercase tracking-wider font-semibold">Payment &amp; Delivery</a>
+        <a href="#contact" data-action="nav-link" class="block text-brand-800 hover:text-brand-600 py-1 text-sm uppercase tracking-wider font-semibold">Contact Us</a>
+
+        <div class="pt-4 border-t border-brand-200 flex items-center gap-5 text-brand-600 text-lg">
+            <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-brand-900"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-brand-900"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@warmstitch4?_r=1&amp;_t=ZS-9ALVOH5hprQ" target="_blank" rel="noopener" aria-label="TikTok" class="hover:text-brand-900"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </div>
+</header>
+
+<!-- ================================================================= HERO -->
+<section id="home" class="bg-gradient-to-b from-brand-100 to-brand-50 py-20 lg:py-28 border-b border-brand-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="inline-block px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest bg-white text-brand-700 border border-brand-300 uppercase">
+                    Signature Collection 2026
+                </span>
+                <h1 class="serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-900 leading-tight">
+                    Timeless Elegance.<br>
+                    <span class="text-brand-600 italic">Step Into Confidence.</span>
+                </h1>
+                <p class="text-brand-700 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Welcome to <strong class="text-brand-900 font-semibold">Warm Stitch</strong> — premium tailored apparel
+                    engineered for comfort, quality layering, and effortlessly bold individual style.
+                </p>
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#catalog" class="px-8 py-3.5 bg-brand-900 hover:bg-brand-700 text-white font-semibold rounded-full transition shadow-lg text-xs tracking-widest uppercase">
+                        Shop the Collection
+                    </a>
+                    <a href="#about" class="px-8 py-3.5 bg-white border border-brand-300 text-brand-800 hover:border-brand-600 font-semibold rounded-full transition text-xs tracking-widest uppercase">
+                        Learn Our Story
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                <div class="rounded-2xl overflow-hidden border border-brand-200 shadow-xl aspect-[3/4] bg-brand-100">
+                    <img src="assets/images/products/aria-luna-cream-set.jpg" alt="Aria &amp; Luna Cream Set" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-brand-200 shadow-xl aspect-[3/4] bg-brand-100 mt-8">
+                    <img src="assets/images/products/kael-textured-black-coords.jpg" alt="Kael Textured Black Coords" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================== CATALOG -->
+<main id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-brand-200">
+        <div>
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-600">Our Collection</span>
+            <h2 class="serif text-3xl sm:text-4xl font-bold text-brand-900 tracking-wide mt-1">Shop Individual Pieces &amp; Sets</h2>
+            <p class="text-brand-700 text-sm mt-2">
+                Tops, bottoms and coordinated sets for women and men — <span id="resultCount" class="font-semibold text-brand-900">12 items</span> available.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-action="filter" data-filter="all"    id="btn-all"    aria-pressed="true"  class="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition border bg-brand-900 text-white border-brand-900">All</button>
+            <button type="button" data-action="filter" data-filter="women"  id="btn-women"  aria-pressed="false" class="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition border bg-white text-brand-700 border-brand-300 hover:border-brand-600">Women</button>
+            <button type="button" data-action="filter" data-filter="men"    id="btn-men"    aria-pressed="false" class="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition border bg-white text-brand-700 border-brand-300 hover:border-brand-600">Men</button>
+            <button type="button" data-action="filter" data-filter="top"    id="btn-top"    aria-pressed="false" class="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition border bg-white text-brand-700 border-brand-300 hover:border-brand-600">Tops</button>
+            <button type="button" data-action="filter" data-filter="bottom" id="btn-bottom" aria-pressed="false" class="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition border bg-white text-brand-700 border-brand-300 hover:border-brand-600">Bottoms</button>
+            <button type="button" data-action="filter" data-filter="set"    id="btn-set"    aria-pressed="false" class="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition border bg-white text-brand-700 border-brand-300 hover:border-brand-600">Sets</button>
+        </div>
+    </div>
+
+    <p class="text-[11px] text-brand-600 mt-4">
+        <i class="fa-solid fa-circle-info mr-1"></i>
+        Prices change with the size you select. Click any photo for a closer look.
+    </p>
+
+    <!-- Product cards are rendered by assets/js/catalog.js -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6"></div>
+
+    <div id="noResults" class="hidden text-center py-20 bg-white rounded-2xl border border-brand-200 my-8">
+        <i class="fa-solid fa-shirt text-4xl text-brand-400 mb-3"></i>
+        <h3 class="serif text-xl font-semibold text-brand-800">No matching items found</h3>
+        <p class="text-brand-600 text-sm mt-1">Try another search term or reset the filter.</p>
+        <button type="button" data-action="clear-search" class="mt-4 px-6 py-2.5 bg-brand-900 hover:bg-brand-700 text-white rounded-full text-xs tracking-wider uppercase transition">
+            Clear search
+        </button>
+    </div>
+</main>
+
+<!-- ============================================================= ABOUT US -->
+<section id="about" class="bg-brand-100 border-t border-brand-200 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-600">Our Story</span>
+            <h2 class="serif text-3xl sm:text-4xl font-bold text-brand-900">About Warm Stitch</h2>
+            <div class="w-16 h-0.5 bg-brand-600 mx-auto"></div>
+            <p class="text-brand-700 text-base leading-relaxed pt-2">
+                Warm Stitch is a premium apparel brand created to provide clothing that combines comfort, quality and
+                modern style. We specialise in thoughtfully designed clothing and outerwear made to become part of a
+                person's everyday wardrobe.
+            </p>
+        </div>
+
+        <!-- Vision / Mission / Quality — deliberately larger type than the rest of the page -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="p-8 rounded-2xl bg-white border border-brand-200 space-y-4 shadow-sm">
+                <div class="w-14 h-14 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 text-2xl">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3 class="serif text-2xl font-bold text-brand-900">Our Vision</h3>
+                <p class="text-brand-700 text-base leading-relaxed">
+                    To become an international emblem for luxury essentials, where warmth meets modern silhouette precision.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-white border border-brand-200 space-y-4 shadow-sm">
+                <div class="w-14 h-14 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 text-2xl">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="serif text-2xl font-bold text-brand-900">Our Mission</h3>
+                <p class="text-brand-700 text-base leading-relaxed">
+                    Providing meticulously stitched, eco-conscious apparel that seamlessly balances warmth, functionality
+                    and timeless sophistication.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-white border border-brand-200 space-y-4 shadow-sm">
+                <div class="w-14 h-14 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 text-2xl">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3 class="serif text-2xl font-bold text-brand-900">Quality Guarantee</h3>
+                <p class="text-brand-700 text-base leading-relaxed">
+                    Each thread is hand-selected and quality tested to withstand everyday wear while keeping its
+                    pristine drape.
+                </p>
+            </div>
+        </div>
+
+        <!-- The team, described rather than named -->
+        <div class="pt-12 border-t border-brand-200">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <h3 class="serif text-2xl font-bold text-brand-900">The Minds Behind Warm Stitch</h3>
+                <div class="w-12 h-0.5 bg-brand-600 mx-auto"></div>
+                <p class="text-brand-700 text-base leading-relaxed">
+                    Warm Stitch, a clothing brand focused on comfort, quality, and modern style. As a team, we work
+                    together to create a brand that offers stylish, comfortable, and eco-conscious clothing. We are
+                    passionate about fashion and committed to making Warm Stitch a brand that reflects creativity,
+                    teamwork, and quality.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================== PAYMENT & DELIVERY -->
+<section id="payment-delivery" class="py-20 border-t border-brand-200 bg-brand-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-600">Shopping Assurance</span>
+            <h2 class="serif text-3xl sm:text-4xl font-bold text-brand-900">Payment &amp; Delivery Information</h2>
+            <div class="w-16 h-0.5 bg-brand-600 mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-brand-200 rounded-2xl p-7 space-y-4 shadow-sm">
+                <div class="flex items-center gap-3 text-brand-600">
+                    <i class="fa-solid fa-credit-card text-2xl"></i>
+                    <h3 class="serif text-lg font-bold text-brand-900">Accepted Payments</h3>
+                </div>
+                <ul class="text-sm text-brand-700 space-y-2.5 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>GCash / Maya</strong> e-wallets</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Cash on Delivery (COD)</strong></span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Visa &amp; Mastercard</strong> credit / debit</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Direct bank transfer</strong></span></li>
+                </ul>
+            </div>
+
+            <div class="bg-white border border-brand-200 rounded-2xl p-7 space-y-4 shadow-sm">
+                <div class="flex items-center gap-3 text-brand-600">
+                    <i class="fa-solid fa-truck-fast text-2xl"></i>
+                    <h3 class="serif text-lg font-bold text-brand-900">Delivery &amp; Pickup</h3>
+                </div>
+                <ul class="text-sm text-brand-700 space-y-2.5 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Nationwide standard shipping</strong> — 3–5 days</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Express doorstep courier</strong> — 1–2 days</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Store pickup</strong> — Cagayan de Oro branch</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>Free delivery</strong> on orders above <span data-free-delivery>₱9,426.08</span></span></li>
+                </ul>
+            </div>
+
+            <div class="bg-white border border-brand-200 rounded-2xl p-7 space-y-4 shadow-sm">
+                <div class="flex items-center gap-3 text-brand-600">
+                    <i class="fa-solid fa-rotate-left text-2xl"></i>
+                    <h3 class="serif text-lg font-bold text-brand-900">Returns &amp; Refunds</h3>
+                </div>
+                <ul class="text-sm text-brand-700 space-y-2.5 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span><strong>14-day hassle-free returns</strong></span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span>Easy size exchange policy</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span>Full refund for factory flaws</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span>Customer support available 24/7</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================== CONTACT US -->
+<section id="contact" class="py-20 bg-brand-100 border-t border-brand-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <span class="text-xs uppercase font-bold tracking-widest text-brand-600">Get in Touch</span>
+                    <h2 class="serif text-3xl font-bold text-brand-900 mt-1">Contact Warm Stitch</h2>
+                    <p class="text-brand-700 text-sm mt-2 leading-relaxed">
+                        Questions about sizing, customisation or an existing order? Our customer care team is happy to help.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white p-4 rounded-xl border border-brand-200">
+                        <i class="fa-solid fa-phone text-brand-600 text-lg mt-1"></i>
+                        <div>
+                            <h4 class="serif font-bold text-brand-900 text-sm">Contact Number</h4>
+                            <a href="tel:+639171234567" class="text-sm text-brand-700 hover:text-brand-900 transition">+63 917 123 4567</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white p-4 rounded-xl border border-brand-200">
+                        <i class="fa-solid fa-envelope text-brand-600 text-lg mt-1"></i>
+                        <div class="min-w-0">
+                            <h4 class="serif font-bold text-brand-900 text-sm">Email Address</h4>
+                            <a href="mailto:warmstitch.clothing@gmail.com" class="text-sm text-brand-700 hover:text-brand-900 transition break-all">warmstitch.clothing@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white p-4 rounded-xl border border-brand-200">
+                        <i class="fa-solid fa-location-dot text-brand-600 text-lg mt-1"></i>
+                        <div>
+                            <h4 class="serif font-bold text-brand-900 text-sm">Business Location</h4>
+                            <p class="text-sm text-brand-700">Warm Stitch Studio, Cagayan de Oro City, Northern Mindanao, Philippines</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="serif text-sm font-bold text-brand-900 mb-3">Official Social Media Pages</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" rel="noopener"
+                           class="flex items-center gap-2 px-4 py-2.5 bg-white hover:border-brand-600 text-brand-800 rounded-lg text-xs font-semibold transition border border-brand-300">
+                            <i class="fa-brands fa-facebook text-brand-600"></i><span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==" target="_blank" rel="noopener"
+                           class="flex items-center gap-2 px-4 py-2.5 bg-white hover:border-brand-600 text-brand-800 rounded-lg text-xs font-semibold transition border border-brand-300">
+                            <i class="fa-brands fa-instagram text-brand-600"></i><span>Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@warmstitch4?_r=1&amp;_t=ZS-9ALVOH5hprQ" target="_blank" rel="noopener"
+                           class="flex items-center gap-2 px-4 py-2.5 bg-white hover:border-brand-600 text-brand-800 rounded-lg text-xs font-semibold transition border border-brand-300">
+                            <i class="fa-brands fa-tiktok text-brand-600"></i><span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inquiry form -->
+            <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-brand-200 shadow-sm">
+                <h3 class="serif text-2xl font-bold text-brand-900 mb-6">Send Us an Inquiry</h3>
+                <form id="inquiryForm" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="inqName" class="block text-xs uppercase text-brand-700 font-bold mb-1.5">Full Name</label>
+                            <input type="text" id="inqName" required placeholder="e.g. Maria Santos"
+                                   class="w-full bg-brand-50 border border-brand-300 rounded-xl py-3 px-4 text-sm text-brand-900 placeholder-brand-600 focus:outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label for="inqEmail" class="block text-xs uppercase text-brand-700 font-bold mb-1.5">Email Address</label>
+                            <input type="email" id="inqEmail" required placeholder="e.g. maria@example.com"
+                                   class="w-full bg-brand-50 border border-brand-300 rounded-xl py-3 px-4 text-sm text-brand-900 placeholder-brand-600 focus:outline-none focus:border-brand-600">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="inqSubject" class="block text-xs uppercase text-brand-700 font-bold mb-1.5">Subject</label>
+                        <input type="text" id="inqSubject" required placeholder="Inquiry topic..."
+                               class="w-full bg-brand-50 border border-brand-300 rounded-xl py-3 px-4 text-sm text-brand-900 placeholder-brand-600 focus:outline-none focus:border-brand-600">
+                    </div>
+                    <div>
+                        <label for="inqMessage" class="block text-xs uppercase text-brand-700 font-bold mb-1.5">Message</label>
+                        <textarea id="inqMessage" rows="5" required placeholder="Write your inquiry here..."
+                                  class="w-full bg-brand-50 border border-brand-300 rounded-xl py-3 px-4 text-sm text-brand-900 placeholder-brand-600 focus:outline-none focus:border-brand-600"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3.5 bg-brand-900 hover:bg-brand-700 text-white font-semibold rounded-xl transition text-xs uppercase tracking-widest">
+                        Send Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================================== FOOTER -->
+<footer class="bg-brand-50 border-t border-brand-200 py-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="assets/images/logo/warm-stitch-logo.jpg" alt="Warm Stitch" class="h-12 w-12 object-cover rounded-full border border-brand-300">
+                <div>
+                    <p class="serif text-lg font-bold text-brand-900">WARM STITCH</p>
+                    <p class="text-[9px] text-brand-600 uppercase tracking-[0.2em]">Step Into Confidence</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 text-brand-600 text-lg">
+                <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-brand-900 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-brand-900 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@warmstitch4?_r=1&amp;_t=ZS-9ALVOH5hprQ" target="_blank" rel="noopener" aria-label="TikTok" class="hover:text-brand-900 transition"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+
+            <p class="text-xs text-brand-600">&copy; <span data-year>2026</span> Warm Stitch. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ========================================================= BAG (DRAWER) -->
+<div id="cartModal" data-backdrop="cartModal" class="fixed inset-0 z-50 flex justify-end bg-brand-900/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="cartContent" class="w-full max-w-md bg-brand-50 h-full shadow-2xl flex flex-col border-l border-brand-200 transform translate-x-full transition-transform duration-300">
+        <div class="p-6 border-b border-brand-200 flex items-center justify-between bg-white">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-bag-shopping text-brand-600"></i>
+                <h3 class="serif text-lg font-bold text-brand-900">Your Shopping Bag</h3>
+            </div>
+            <button type="button" data-action="cart-close" aria-label="Close bag" class="text-brand-600 hover:text-brand-900 transition p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <div id="cartItemsList" class="flex-grow overflow-y-auto p-6 space-y-4"></div>
+
+        <div class="p-6 border-t border-brand-200 bg-white space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-brand-700 text-sm font-semibold">Subtotal</span>
+                <span id="cartSubtotal" class="serif font-bold text-brand-900 text-lg">₱0.00</span>
+            </div>
+            <p id="cartShippingNote" class="text-[11px] text-brand-600">Shipping and taxes are calculated at checkout.</p>
+            <button type="button" data-action="checkout-open" class="w-full py-3.5 bg-brand-900 hover:bg-brand-700 text-white font-semibold rounded-xl transition shadow text-xs tracking-widest uppercase">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================== QUICK VIEW -->
+<div id="quickViewModal" data-backdrop="quickViewModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-900/60 backdrop-blur-md">
+    <div class="bg-brand-50 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-brand-200">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div id="qvMedia" class="aspect-[3/4] md:aspect-auto md:h-full bg-brand-100 overflow-hidden rounded-t-3xl md:rounded-t-none md:rounded-l-3xl"></div>
+
+            <div class="p-7 sm:p-9 flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-4">
+                    <span id="qvCategory" class="text-[10px] uppercase font-bold tracking-widest text-brand-600"></span>
+                    <button type="button" data-action="qv-close" aria-label="Close quick view" class="text-brand-600 hover:text-brand-900 -mt-2 -mr-2 p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <h3 id="qvName" class="serif text-2xl font-bold text-brand-900 leading-snug"></h3>
+                <p id="qvPrice" class="serif text-3xl font-bold text-brand-600"></p>
+                <p id="qvDescription" class="text-brand-700 text-sm leading-relaxed"></p>
+
+                <div class="pt-2">
+                    <span class="block text-[11px] uppercase tracking-wider text-brand-700 font-bold mb-2">Select size — price updates</span>
+                    <div id="qvSizes" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <button type="button" id="qvAdd" data-action="qv-add"
+                        class="mt-auto w-full py-4 bg-brand-900 hover:bg-brand-700 text-white font-semibold rounded-xl transition text-xs uppercase tracking-widest">
+                    Add to bag
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================= CHECKOUT -->
+<div id="checkoutModal" data-backdrop="checkoutModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-900/60 backdrop-blur-md">
+    <div class="bg-brand-50 border border-brand-200 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 max-h-[92vh] overflow-y-auto shadow-2xl">
+        <div class="flex items-center justify-between border-b border-brand-200 pb-4">
+            <div>
+                <h3 class="serif text-xl font-bold text-brand-900">Order Checkout</h3>
+                <p id="checkoutItemCount" class="text-xs text-brand-600 mt-0.5"></p>
+            </div>
+            <button type="button" data-action="checkout-close" aria-label="Close checkout" class="text-brand-600 hover:text-brand-900 p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <p class="text-[11px] text-brand-700 bg-brand-100 border border-brand-200 rounded-lg px-3 py-2.5">
+            <i class="fa-solid fa-circle-info mr-1 text-brand-600"></i>
+            This is a demonstration checkout. No payment is processed and no card details are collected.
+        </p>
+
+        <form id="checkoutForm" class="space-y-4 text-xs">
+            <div>
+                <label for="coName" class="block text-brand-700 font-bold uppercase mb-1.5">Full Name</label>
+                <input type="text" id="coName" required placeholder="Juan Dela Cruz"
+                       class="w-full bg-white border border-brand-300 rounded-xl py-3 px-3.5 text-sm text-brand-900 focus:outline-none focus:border-brand-600">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="coEmail" class="block text-brand-700 font-bold uppercase mb-1.5">Email</label>
+                    <input type="email" id="coEmail" required placeholder="juan@example.com"
+                           class="w-full bg-white border border-brand-300 rounded-xl py-3 px-3.5 text-sm text-brand-900 focus:outline-none focus:border-brand-600">
+                </div>
+                <div>
+                    <label for="coPhone" class="block text-brand-700 font-bold uppercase mb-1.5">Mobile Number</label>
+                    <input type="tel" id="coPhone" required placeholder="+63 900 000 0000"
+                           class="w-full bg-white border border-brand-300 rounded-xl py-3 px-3.5 text-sm text-brand-900 focus:outline-none focus:border-brand-600">
+                </div>
+            </div>
+            <div>
+                <label for="coAddress" class="block text-brand-700 font-bold uppercase mb-1.5">Delivery Address</label>
+                <textarea id="coAddress" rows="2" required placeholder="Street, barangay, city, province"
+                          class="w-full bg-white border border-brand-300 rounded-xl py-3 px-3.5 text-sm text-brand-900 focus:outline-none focus:border-brand-600"></textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="paymentMethodSelect" class="block text-brand-700 font-bold uppercase mb-1.5">Payment Method</label>
+                    <select id="paymentMethodSelect" class="w-full bg-white border border-brand-300 rounded-xl py-3 px-3.5 text-sm text-brand-900 focus:outline-none focus:border-brand-600">
+                        <option>GCash / Maya e-Wallet</option>
+                        <option>Cash on Delivery (COD)</option>
+                        <option>Credit / Debit Card</option>
+                        <option>Direct Bank Transfer</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="deliveryMethodSelect" class="block text-brand-700 font-bold uppercase mb-1.5">Delivery Option</label>
+                    <select id="deliveryMethodSelect" class="w-full bg-white border border-brand-300 rounded-xl py-3 px-3.5 text-sm text-brand-900 focus:outline-none focus:border-brand-600">
+                        <option>Nationwide Standard (3–5 days)</option>
+                        <option>Express Doorstep (1–2 days)</option>
+                        <option>Store Pickup — Cagayan de Oro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="pt-3 border-t border-brand-200 flex items-center justify-between">
+                <span class="text-brand-700 text-sm font-semibold">Total Payment</span>
+                <span id="checkoutTotalAmount" class="serif text-xl font-bold text-brand-900">₱0.00</span>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 bg-brand-900 hover:bg-brand-700 text-white font-semibold rounded-xl transition uppercase tracking-widest">
+                Complete &amp; Place Order
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ========================================================= CONFIRMATION -->
+<div id="confirmationModal" data-backdrop="confirmationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-900/60 backdrop-blur-md">
+    <div class="bg-brand-50 border border-brand-200 rounded-3xl max-w-md w-full p-8 text-center space-y-5 shadow-2xl">
+        <div class="w-16 h-16 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 text-3xl mx-auto">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 class="serif text-2xl font-bold text-brand-900">Order Placed</h3>
+        <p class="text-brand-700 text-sm leading-relaxed">
+            Thank you for shopping with Warm Stitch. A confirmation will be sent to your email shortly.
+        </p>
+
+        <div class="bg-white border border-brand-200 rounded-xl p-4 space-y-2 text-left text-sm">
+            <div class="flex justify-between gap-4">
+                <span class="text-brand-600">Reference</span>
+                <span id="confirmReference" class="font-bold text-brand-900"></span>
+            </div>
+            <div class="flex justify-between gap-4">
+                <span class="text-brand-600">Payment</span>
+                <span id="confirmMethod" class="font-semibold text-brand-900 text-right"></span>
+            </div>
+            <div class="flex justify-between gap-4 pt-2 border-t border-brand-200">
+                <span class="text-brand-600">Total</span>
+                <span id="confirmTotal" class="serif font-bold text-brand-900"></span>
+            </div>
+        </div>
+
+        <p class="text-[11px] text-brand-600">Demonstration order — no payment was processed.</p>
+
+        <button type="button" data-action="confirm-close"
+                class="w-full py-3.5 bg-brand-900 hover:bg-brand-700 text-white font-semibold rounded-xl transition text-xs uppercase tracking-widest">
+            Continue Shopping
+        </button>
+    </div>
+</div>
+
+<!-- ================================================================ TOAST -->
+<div id="toast" class="fixed bottom-6 right-6 z-[60] bg-brand-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 max-w-[90vw]">
+    <i class="fa-solid fa-circle-check text-brand-300"></i>
+    <span id="toastMessage" class="text-xs font-medium"></span>
+</div>
+
+<!-- Scripts: helpers, then data, then features, then wiring -->
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/quickview.js"></script>
+<script src="assets/js/checkout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

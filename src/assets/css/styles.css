@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Warm Stitch — custom styles
+   Tailwind utilities do most of the work; this file holds the few things
+   that are awkward or impossible as utility classes.
+   ========================================================================== */
+
+:root {
+  --ws-cream: #FAF8F5;
+  --ws-sand: #F5EFE6;
+  --ws-border: #E8DBCE;
+  --ws-espresso: #1A110B;
+  --ws-gold: #7F5E47;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--ws-cream);
+  color: var(--ws-espresso);
+}
+
+.serif {
+  font-family: 'Cinzel', serif;
+}
+
+/* ------------------------------------------------------------ components */
+
+.product-card {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Truncate a description to three lines. Spelled out rather than relying on
+   Tailwind's line-clamp plugin being present in the CDN build. */
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------- scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ws-sand);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ws-border);
+  border-radius: 5px;
+  border: 2px solid var(--ws-sand);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9B3A0;
+}
+
+/* --------------------------------------------------------- accessibility */
+
+:focus-visible {
+  outline: 2px solid var(--ws-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect a reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Keep the page usable if a print-out is ever made of the concept site. */
+@media print {
+  header,
+  footer,
+  #cartModal,
+  #checkoutModal,
+  #quickViewModal,
+  #confirmationModal,
+  #toast {
+    display: none !important;
+  }
+}

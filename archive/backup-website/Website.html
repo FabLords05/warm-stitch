@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Stitch - Step Into Confidence | Premium Luxury Fashion</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#FAF8F5',
+                            100: '#F5EFE6',
+                            200: '#E8DBCE',
+                            300: '#D5C1AE',
+                            400: '#B89B82',
+                            500: '#9B785E',
+                            600: '#7F5E47',
+                            700: '#634735',
+                            800: '#2A1E17',
+                            900: '#1A110B',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #1A110B;
+            color: #FAF8F5;
+        }
+        .serif {
+            font-family: 'Cinzel', serif;
+        }
+        .product-card {
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A110B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #463124;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7F5E47;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-brand-900/95 backdrop-blur-md border-b border-brand-800/80 transition-all shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Tagline -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <img src="warm-stitch-logo.jpg" alt="Warm Stitch Logo" class="h-12 w-12 object-cover rounded-full border border-brand-500/40 group-hover:border-brand-400 transition" onerror="this.onerror=null; this.src='warm-stitch-logo.png'; this.onerror=function(){this.src='https://placehold.co/100x100/1A110B/FAF8F5?text=WS';}">
+                    <div class="flex flex-col">
+                        <span class="serif text-xl sm:text-2xl tracking-wider font-bold text-brand-100 group-hover:text-white transition">WARM STITCH</span>
+                        <span class="text-[9px] tracking-[0.25em] text-brand-400 uppercase -mt-0.5">Step Into Confidence</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-7 text-xs uppercase font-medium tracking-widest">
+                    <a href="#home" class="text-brand-200 hover:text-brand-400 transition">Home</a>
+                    <a href="#catalog" onclick="filterCategory('all')" class="text-brand-200 hover:text-brand-400 transition">Catalog</a>
+                    <a href="#about" class="text-brand-200 hover:text-brand-400 transition">About Us</a>
+                    <a href="#payment-delivery" class="text-brand-200 hover:text-brand-400 transition">Payment & Delivery</a>
+                    <a href="#contact" class="text-brand-200 hover:text-brand-400 transition">Contact Us</a>
+                </nav>
+
+                <!-- Header Actions & Social Media Shortcuts -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <!-- Quick Social Media Links (Editable Links) -->
+                    <div class="hidden xl:flex items-center space-x-2 text-brand-400 text-xs pr-3 border-r border-brand-800">
+                        <!-- EDITABLE SOCIAL LINKS -->
+                        <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" title="Facebook" class="p-1.5 hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==
+" target="_blank" title="Instagram" class="p-1.5 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@warmstitch4?_r=1&_t=ZS-9ALVOH5hprQ" target="_blank" title="TikTok" class="p-1.5 hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://web.facebook.com/cherryjane.olaer" target="_blank" title="Pinterest" class="p-1.5 hover:text-white transition"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+
+                    <!-- Search Input Box -->
+                    <div class="relative hidden sm:block w-36 md:w-48 lg:w-56">
+                        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search collection..." class="w-full bg-brand-800/60 border border-brand-700/60 rounded-full py-1.5 pl-8 pr-3 text-xs text-brand-100 placeholder-brand-400 focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-[11px] text-brand-400"></i>
+                    </div>
+
+                    <!-- Cart Drawer Trigger Button -->
+                    <button onclick="toggleCartModal()" class="relative p-2.5 rounded-full bg-brand-800/60 border border-brand-700/60 hover:border-brand-500 hover:bg-brand-800 transition text-brand-100" aria-label="View Shopping Bag">
+                        <i class="fa-solid fa-bag-shopping text-base"></i>
+                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-900 hidden">0</span>
+                    </button>
+
+                    <!-- Mobile Navigation Menu Toggle Button -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-brand-100 hover:bg-brand-800/60">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-900/98 border-b border-brand-800 px-6 py-6 space-y-4">
+            <input type="text" id="mobileSearchInput" oninput="handleSearchMobile()" placeholder="Search collection..." class="w-full bg-brand-800/60 border border-brand-700/60 rounded-xl py-2 pl-9 pr-4 text-xs text-brand-100 placeholder-brand-400 focus:outline-none">
+            <a href="#home" onclick="toggleMobileMenu()" class="block text-brand-100 hover:text-brand-400 py-1 text-sm uppercase tracking-wider font-medium">Home</a>
+            <a href="#catalog" onclick="filterCategory('all'); toggleMobileMenu()" class="block text-brand-100 hover:text-brand-400 py-1 text-sm uppercase tracking-wider font-medium">Catalog</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-brand-100 hover:text-brand-400 py-1 text-sm uppercase tracking-wider font-medium">About Us</a>
+            <a href="#payment-delivery" onclick="toggleMobileMenu()" class="block text-brand-100 hover:text-brand-400 py-1 text-sm uppercase tracking-wider font-medium">Payment & Delivery</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-brand-100 hover:text-brand-400 py-1 text-sm uppercase tracking-wider font-medium">Contact Us</a>
+            
+            <div class="pt-4 border-t border-brand-800 flex items-center space-x-5 text-brand-300 text-base">
+                <!-- EDITABLE MOBILE SOCIAL LINKS -->
+                <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA=" target="_blank" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@warmstitch4?is_from_webapp=1&sender_device=pc" target="_blank" class="hover:text-white"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://web.facebook.com/cherryjane.olaer" target="_blank" class="hover:text-white"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home / Hero Section -->
+    <section id="home" class="relative bg-gradient-to-b from-brand-900 via-brand-900/95 to-brand-900 py-20 lg:py-28 overflow-hidden border-b border-brand-800/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest bg-brand-800/70 text-brand-300 border border-brand-700/50 uppercase">
+                        Signature Collection 2026
+                    </span>
+                    <h1 class="serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                        Timeless Elegance.<br/>
+                        <span class="text-brand-400 italic">Step Into Confidence.</span>
+                    </h1>
+                    <p class="text-brand-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Welcome to <strong class="text-brand-100 font-semibold">Warm Stitch</strong>. We design premium tailored apparel engineered for comfort, luxury layering, and effortlessly bold individual style.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#catalog" class="px-8 py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-full transition-all shadow-lg hover:shadow-brand-500/20 text-xs tracking-widest uppercase">
+                            Shop The Collection
+                        </a>
+                        <a href="#about" class="px-8 py-3.5 border border-brand-600 text-brand-200 hover:bg-brand-800/50 hover:text-white font-medium rounded-full transition-all text-xs tracking-widest uppercase">
+                            Learn Our Story
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Product Showcase -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 relative">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl overflow-hidden border border-brand-700/50 shadow-2xl aspect-[3/4] bg-brand-800 group">
+                            <img src="Brown Outfit For Women.jpg" alt="Warm Stitch Women's Outfit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='Brown Outfit For Women.png'; this.onerror=function(){this.src='https://placehold.co/400x533/2A1E17/FFF?text=Women+Outfit';}">
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="rounded-2xl overflow-hidden border border-brand-700/50 shadow-2xl aspect-[3/4] bg-brand-800 group">
+                            <img src="Brown Outfit For Men.jpg" alt="Warm Stitch Men's Outfit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='Brown Outfit For Men.png'; this.onerror=function(){this.src='https://placehold.co/400x533/2A1E17/FFF?text=Men+Outfit';}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Catalog Section -->
+    <main id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex-grow w-full">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-brand-800/60">
+            <div>
+                <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Curated Outfits</span>
+                <h2 class="serif text-3xl sm:text-4xl font-bold text-white tracking-wide mt-1">Featured Outfits & Sets</h2>
+                <p class="text-brand-300 text-sm mt-1">Explore our complete handcrafted ensembles designed for modern wardrobe perfection.</p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="flex flex-wrap items-center gap-2">
+                <button onclick="filterCategory('all')" id="btn-all" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-brand-500 bg-brand-500 text-white">
+                    All
+                </button>
+                <button onclick="filterCategory('men')" id="btn-men" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-brand-800 bg-brand-800/40 text-brand-300 hover:border-brand-600 hover:text-white">
+                    Men
+                </button>
+                <button onclick="filterCategory('women')" id="btn-women" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-brand-800 bg-brand-800/40 text-brand-300 hover:border-brand-600 hover:text-white">
+                    Women
+                </button>
+                <button onclick="filterCategory('casual')" id="btn-casual" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-brand-800 bg-brand-800/40 text-brand-300 hover:border-brand-600 hover:text-white">
+                    Casual
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <!-- Dynamic JavaScript Product Injection -->
+        </div>
+
+        <!-- Fallback Empty Search Result -->
+        <div id="noResults" class="hidden text-center py-20 bg-brand-800/20 rounded-2xl border border-brand-800 my-8">
+            <i class="fa-solid fa-shirt text-4xl text-brand-600 mb-3"></i>
+            <h3 class="serif text-xl font-semibold text-brand-200">No matching items found</h3>
+            <p class="text-brand-400 text-sm mt-1">Try resetting your filter or search query.</p>
+            <button onclick="filterCategory('all')" class="mt-4 px-6 py-2.5 bg-brand-800 hover:bg-brand-700 text-brand-100 rounded-full text-xs tracking-wider uppercase transition">
+                Show All Products
+            </button>
+        </div>
+    </main>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-brand-900/80 border-t border-brand-800/80 py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Our Story & Heritage</span>
+                <h2 class="serif text-3xl sm:text-4xl font-bold text-white">About Warm Stitch</h2>
+                <div class="w-16 h-0.5 bg-brand-500 mx-auto"></div>
+                <p class="text-brand-200 text-sm leading-relaxed pt-2">
+                    Warm Stitch was founded with a single mission: to craft premium, tactile outerwear and everyday apparel that empowers individuals to step into every room with confidence.
+                </p>
+            </div>
+
+            <!-- Vision, Mission & Philosophy Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="p-8 rounded-2xl bg-brand-800/40 border border-brand-800/80 space-y-4 hover:border-brand-600/50 transition">
+                    <div class="w-12 h-12 rounded-full bg-brand-700/30 flex items-center justify-center text-brand-400 text-xl">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-white">Our Vision</h3>
+                    <p class="text-brand-300 text-xs leading-relaxed">To become an international emblem for luxury essentials where warmth meets modern silhouette precision.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-800/40 border border-brand-800/80 space-y-4 hover:border-brand-600/50 transition">
+                    <div class="w-12 h-12 rounded-full bg-brand-700/30 flex items-center justify-center text-brand-400 text-xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-white">Our Mission</h3>
+                    <p class="text-brand-300 text-xs leading-relaxed">Providing meticulously stitched, eco-conscious apparel that seamlessly balances warmth, functionality, and timeless sophistication.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-800/40 border border-brand-800/80 space-y-4 hover:border-brand-600/50 transition">
+                    <div class="w-12 h-12 rounded-full bg-brand-700/30 flex items-center justify-center text-brand-400 text-xl">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="serif text-xl font-bold text-white">Precision Quality</h3>
+                    <p class="text-brand-300 text-xs leading-relaxed">Each thread is hand-selected and quality tested to withstand everyday wear while maintaining its pristine drape.</p>
+                </div>
+            </div>
+
+             <!-- Team Section -->
+                <div class="pt-10 border-t border-brand-border">
+                    <div class="text-center mb-10">
+                        <h3 class="font-cinzel text-2xl font-bold text-white">The Minds Behind Warm Stitch</h3>
+                        <p class="text-xs text-gray-400 mt-1">Our dedicated team collaborating on concept development, design, and customer experience.</p>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+                        <!-- Member 1 -->
+                        <div class="p-4 rounded-lg bg-brand-card/80 border border-brand-border hover:border-brand-gold/50 transition">
+                            <div class="w-12 h-12 rounded-full bg-brand-border mx-auto flex items-center justify-center text-brand-gold font-bold mb-3">
+                                A
+                            </div>
+                            <h5 class="font-bold text-white text-sm">Artugue</h5>
+                            <span class="text-[10px] text-gray-400">Co-Founder</span>
+                        </div>
+                        <!-- Member 2 -->
+                        <div class="p-4 rounded-lg bg-brand-card/80 border border-brand-border hover:border-brand-gold/50 transition">
+                            <div class="w-12 h-12 rounded-full bg-brand-border mx-auto flex items-center justify-center text-brand-gold font-bold mb-3">
+                                D
+                            </div>
+                            <h5 class="font-bold text-white text-sm">Diano</h5>
+                            <span class="text-[10px] text-gray-400">Co-Founder</span>
+                        </div>
+                        <!-- Member 3 -->
+                        <div class="p-4 rounded-lg bg-brand-card/80 border border-brand-border hover:border-brand-gold/50 transition">
+                            <div class="w-12 h-12 rounded-full bg-brand-border mx-auto flex items-center justify-center text-brand-gold font-bold mb-3">
+                                G
+                            </div>
+                            <h5 class="font-bold text-white text-sm">Ganora</h5>
+                            <span class="text-[10px] text-gray-400">Co-Founder</span>
+                        </div>
+                        <!-- Member 4 -->
+                        <div class="p-4 rounded-lg bg-brand-card/80 border border-brand-border hover:border-brand-gold/50 transition">
+                            <div class="w-12 h-12 rounded-full bg-brand-border mx-auto flex items-center justify-center text-brand-gold font-bold mb-3">
+                                M
+                            </div>
+                            <h5 class="font-bold text-white text-sm">Magallanes</h5>
+                            <span class="text-[10px] text-gray-400">Co-Founder</span>
+                        </div>
+                        <!-- Member 5 -->
+                        <div class="p-4 rounded-lg bg-brand-card/80 border border-brand-border hover:border-brand-gold/50 transition">
+                            <div class="w-12 h-12 rounded-full bg-brand-border mx-auto flex items-center justify-center text-brand-gold font-bold mb-3">
+                                O
+                            </div>
+                            <h5 class="font-bold text-white text-sm">Odchigue</h5>
+                            <span class="text-[10px] text-gray-400">Co-Founder</span>
+                        </div>
+                        <!-- Member 6 -->
+                        <div class="p-4 rounded-lg bg-brand-card/80 border border-brand-border hover:border-brand-gold/50 transition">
+                            <div class="w-12 h-12 rounded-full bg-brand-border mx-auto flex items-center justify-center text-brand-gold font-bold mb-3">
+                                O
+                            </div>
+                            <h5 class="font-bold text-white text-sm">Olaer</h5>
+                            <span class="text-[10px] text-gray-400">Co-Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Payment & Delivery Information Section -->
+    <section id="payment-delivery" class="py-20 border-t border-brand-800/80 bg-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Shopping Assurance</span>
+                <h2 class="serif text-3xl sm:text-4xl font-bold text-white">Payment & Delivery Information</h2>
+                <div class="w-16 h-0.5 bg-brand-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Payment Methods -->
+                <div class="bg-brand-800/40 border border-brand-800 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center space-x-3 text-brand-400">
+                        <i class="fa-solid fa-credit-card text-2xl"></i>
+                        <h3 class="serif text-lg font-bold text-white">Accepted Payments</h3>
+                    </div>
+                    <ul class="text-xs text-brand-300 space-y-2 leading-relaxed">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>GCash / Maya e-Wallets</strong></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>Cash on Delivery (COD)</strong></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>Credit / Debit Cards (Visa, Mastercard)</strong></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>Direct Bank Wire Transfer</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Delivery Options -->
+                <div class="bg-brand-800/40 border border-brand-800 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center space-x-3 text-brand-400">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
+                        <h3 class="serif text-lg font-bold text-white">Delivery & Pickup</h3>
+                    </div>
+                    <ul class="text-xs text-brand-300 space-y-2 leading-relaxed">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>Nationwide Standard Shipping</strong> (3-5 Days)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>Express Doorstep Courier</strong> (1-2 Days)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>Store Pickup Option</strong> (Cagayan de Oro Branch)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Free Delivery on orders above ₱150</li>
+                    </ul>
+                </div>
+
+                <!-- Return Policy -->
+                <div class="bg-brand-800/40 border border-brand-800 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center space-x-3 text-brand-400">
+                        <i class="fa-solid fa-rotate-left text-2xl"></i>
+                        <h3 class="serif text-lg font-bold text-white">Return & Refund Policy</h3>
+                    </div>
+                    <ul class="text-xs text-brand-300 space-y-2 leading-relaxed">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> <strong>14-Day Hassle-Free Returns</strong></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Easy size exchange policy</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Full monetary refund for factory flaws</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Customer support available 24/7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-brand-900/60 border-t border-brand-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Get In Touch</span>
+                        <h2 class="serif text-3xl font-bold text-white mt-1">Contact Warm Stitch</h2>
+                        <p class="text-brand-300 text-sm mt-2">Have questions about sizing, customization, or an existing order? Reach out to our customer care team.</p>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start space-x-4 bg-brand-800/40 p-4 rounded-xl border border-brand-800">
+                            <i class="fa-solid fa-phone text-brand-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="serif font-bold text-white">Contact Phone Number</h4>
+                                <p class="text-xs text-brand-300 mt-0.5">+63 917 123 4567 </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-brand-800/40 p-4 rounded-xl border border-brand-800">
+                            <i class="fa-solid fa-envelope text-brand-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="serif font-bold text-white">Official Email Address</h4>
+                                <p class="text-xs text-brand-300 mt-0.5">warmstitch@gmail.com </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-brand-800/40 p-4 rounded-xl border border-brand-800">
+                            <i class="fa-solid fa-location-dot text-brand-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="serif font-bold text-white">Boutique Store Location</h4>
+                                <p class="text-xs text-brand-300 mt-0.5">Warm Stitch Studio, Cagayan de Oro City, Northern Mindanao, Philippines</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Explicitly Editable Social Media Buttons -->
+                    <div class="pt-2">
+                        <h4 class="serif text-sm font-bold text-white mb-3">Official Social Media Pages</h4>
+                        <div class="flex flex-wrap gap-3">
+
+
+                            <!-- EDITABLE SOCIAL BUTTONS WITH VISIBLE HOVER LINKS -->
+
+
+                            <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-brand-800 hover:bg-brand-700 text-brand-200 hover:text-white rounded-lg text-xs transition border border-brand-700">
+                                <i class="fa-brands fa-facebook text-brand-400"></i>
+                                <span>Facebook</span>
+
+                            </a>
+                            <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-brand-800 hover:bg-brand-700 text-brand-200 hover:text-white rounded-lg text-xs transition border border-brand-700">
+                                <i class="fa-brands fa-instagram text-brand-400"></i>
+                                <span>Instagram </span>
+
+                            </a>
+                            <a href="https://www.tiktok.com/@warmstitch4?_r=1&_t=ZS-9ALVOH5hprQ" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-brand-800 hover:bg-brand-700 text-brand-200 hover:text-white rounded-lg text-xs transition border border-brand-700">
+                                <i class="fa-brands fa-tiktok text-brand-400"></i>
+                                <span>TikTok</span>
+
+                            </a>
+                            <a href="edit here" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-brand-800 hover:bg-brand-700 text-brand-200 hover:text-white rounded-lg text-xs transition border border-brand-700">
+                                <i class="fa-brands fa-pinterest text-brand-400"></i>
+                                <span>Pinterest</span>
+
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="lg:col-span-7 bg-brand-800/30 p-8 rounded-3xl border border-brand-800">
+                    <h3 class="serif text-2xl font-bold text-white mb-6">Send Us An Inquiry</h3>
+                    <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase text-brand-300 font-semibold mb-1">Your Full Name</label>
+                                <input type="text" required placeholder="e.g. Maria Santos" class="w-full bg-brand-900/80 border border-brand-700/60 rounded-xl py-3 px-4 text-xs text-white placeholder-brand-500 focus:outline-none focus:border-brand-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase text-brand-300 font-semibold mb-1">Email Address</label>
+                                <input type="email" required placeholder="e.g. maria@example.com" class="w-full bg-brand-900/80 border border-brand-700/60 rounded-xl py-3 px-4 text-xs text-white placeholder-brand-500 focus:outline-none focus:border-brand-400">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase text-brand-300 font-semibold mb-1">Subject</label>
+                            <input type="text" required placeholder="Inquiry topic..." class="w-full bg-brand-900/80 border border-brand-700/60 rounded-xl py-3 px-4 text-xs text-white placeholder-brand-500 focus:outline-none focus:border-brand-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase text-brand-300 font-semibold mb-1">Message</label>
+                            <textarea rows="4" required placeholder="Write your inquiry message here..." class="w-full bg-brand-900/80 border border-brand-700/60 rounded-xl py-3 px-4 text-xs text-white placeholder-brand-500 focus:outline-none focus:border-brand-400"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-xl transition text-xs uppercase tracking-widest">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal Drawer -->
+    <div id="cartModal" class="fixed inset-0 z-50 flex justify-end bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="w-full max-w-md bg-brand-900 h-full shadow-2xl flex flex-col border-l border-brand-800 transform translate-x-full transition-transform duration-300" id="cartContent">
+            <!-- Cart Header -->
+            <div class="p-6 border-b border-brand-800 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-bag-shopping text-brand-400"></i>
+                    <h3 class="serif text-lg font-bold text-white">Your Shopping Bag</h3>
+                </div>
+                <button onclick="toggleCartModal()" class="text-brand-400 hover:text-white transition p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Items List -->
+            <div id="cartItemsList" class="flex-grow overflow-y-auto p-6 space-y-4">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Cart Summary & Actions -->
+            <div class="p-6 border-t border-brand-800 bg-brand-900/90 space-y-4">
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-brand-300">Subtotal</span>
+                    <span id="cartSubtotal" class="serif font-bold text-white text-lg">₱0.00</span>
+                </div>
+                <p class="text-[11px] text-brand-400">Shipping & taxes are calculated during checkout.</p>
+                <button onclick="openCheckoutModal()" class="w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-xl transition shadow-lg text-xs tracking-widest uppercase">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal Form -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="bg-brand-900 border border-brand-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-brand-800 pb-4">
+                <h3 class="serif text-xl font-bold text-white">Order Checkout</h3>
+                <button onclick="closeCheckoutModal()" class="text-brand-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <form onsubmit="placeOrder(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-brand-300 font-semibold uppercase mb-1">Full Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full bg-brand-800/60 border border-brand-700/60 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-brand-400">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-brand-300 font-semibold uppercase mb-1">Email</label>
+                        <input type="email" required placeholder="john@example.com" class="w-full bg-brand-800/60 border border-brand-700/60 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-brand-400">
+                    </div>
+                    <div>
+                        <label class="block text-brand-300 font-semibold uppercase mb-1">Mobile Number</label>
+                        <input type="tel" required placeholder="+63 900 000 0000" class="w-full bg-brand-800/60 border border-brand-700/60 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-brand-400">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-brand-300 font-semibold uppercase mb-1">Delivery Address</label>
+                    <textarea rows="2" required placeholder="Complete street address, city, province" class="w-full bg-brand-800/60 border border-brand-700/60 rounded-xl py-2 px-3.5 text-white focus:outline-none focus:border-brand-400"></textarea>
+                </div>
+                <div>
+                    <label class="block text-brand-300 font-semibold uppercase mb-1">Payment Method</label>
+                    <select id="paymentMethodSelect" class="w-full bg-brand-800 border border-brand-700 rounded-xl py-2.5 px-3.5 text-white focus:outline-none">
+                        <option value="GCash">GCash / Maya e-Wallet</option>
+                        <option value="COD">Cash on Delivery (COD)</option>
+                        <option value="Card">Credit / Debit Card</option>
+                        <option value="Bank">Direct Bank Transfer</option>
+                    </select>
+                </div>
+
+                <div class="pt-2 border-t border-brand-800 flex items-center justify-between">
+                    <span class="text-brand-300 text-sm">Total Payment:</span>
+                    <span id="checkoutTotalAmount" class="serif text-xl font-bold text-white">₱0.00</span>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-xl transition uppercase tracking-widest">
+                    Complete & Place Order
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 border-t border-brand-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="warm-stitch-logo.jpg" alt="Warm Stitch Logo" class="h-10 w-10 object-cover rounded-full border border-brand-600/40" onerror="this.onerror=null; this.src='warm-stitch-logo.png'; this.onerror=function(){this.src='https://placehold.co/100x100/1A110B/FAF8F5?text=WS';}">
+                    <div>
+                        <p class="serif text-lg font-bold text-white">WARM STITCH</p>
+                        <p class="text-[9px] text-brand-400 uppercase tracking-widest">Step Into Confidence</p>
+                    </div>
+                </div>
+
+                <!-- EDITABLE FOOTER SOCIAL LINKS -->
+                <div class="flex items-center space-x-6 text-brand-400 text-base">
+                    <a href="https://www.facebook.com/share/1H5BchTw99/" target="_blank" title="Facebook" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/warm_stitch2026?stkn=MXFoOXpjNXl4NXh0bA==" target="_blank" title="Instagram" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@warmstitch4?_r=1&_t=ZS-9ALVOH5hprQ" target="_blank" title="TikTok" class="hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+
+                <p class="text-xs text-brand-400">&copy; 2026 Warm Stitch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-800 border border-brand-500 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-20 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-brand-400"></i>
+        <span id="toastMessage" class="text-xs font-medium">Notification message</span>
+    </div>
+
+    <script>
+        // Official Product Dataset referencing exact image filenames (JPG primary, PNG secondary)
+        const products = [
+            {
+                id: 'p1',
+                name: 'Brown Outfit For Men',
+                imageJpg: 'Brown Outfit For Men.jpg',
+                imagePng: 'Brown Outfit For Men.png',
+                category: 'men',
+                tags: ['men', 'casual', 'brown'],
+                price: 129.00,
+                colors: ['#463124', '#FAF8F5', '#1A110B'],
+                description: 'Relaxed earth-tone brown short sleeve linen shirt paired with ivory wide-leg trousers and crisp white sneakers.'
+            },
+            {
+                id: 'p2',
+                name: 'Brown Outfit For Women',
+                imageJpg: 'Brown Outfit For Women.jpg',
+                imagePng: 'Brown Outfit For Women.png',
+                category: 'women',
+                tags: ['women', 'casual', 'brown'],
+                price: 138.00,
+                colors: ['#634735', '#FFFFFF', '#6B82A8'],
+                description: 'Cozy deep chocolate knitted cardigan with crop white camisole and wide-leg faded blue denim jeans.'
+            },
+            {
+                id: 'p3',
+                name: 'Casual Outfit 1',
+                imageJpg: 'Casual Outfit 1.jpg',
+                imagePng: 'Casual Outfit 1.png',
+                category: 'casual',
+                tags: ['women', 'casual'],
+                price: 115.00,
+                colors: ['#D5C1AE', '#334155'],
+                description: 'Lightweight pinstripe cropped overshirt over classic tank with high-waisted wide denim pants.'
+            },
+            {
+                id: 'p4',
+                name: 'Casual Outfit 2',
+                imageJpg: 'Casual Outfit 2.jpg',
+                imagePng: 'Casual Outfit 2.png',
+                category: 'casual',
+                tags: ['women', 'casual'],
+                price: 122.00,
+                colors: ['#F5EFE6', '#1E293B'],
+                description: 'Nautical striped cream sweater combined with straight relaxed denim and minimalist leather accessories.'
+            },
+            {
+                id: 'p5',
+                name: 'Grey Baggy Outfit For Women',
+                imageJpg: 'Grey Baggy Outfit For Women.jpg',
+                imagePng: 'Grey Baggy Outfit For Women.png',
+                category: 'women',
+                tags: ['women', 'casual', 'grey'],
+                price: 145.00,
+                colors: ['#94A3B8', '#FAF8F5'],
+                description: 'Over-collared soft dusty grey knit sweater layer paired with oversized cream baggy trousers.'
+            },
+            {
+                id: 'p6',
+                name: 'Trendy Outfit',
+                imageJpg: 'Trendy Outfit.jpg',
+                imagePng: 'Trendy Outfit.png',
+                category: 'men',
+                tags: ['men', 'trendy'],
+                price: 149.00,
+                colors: ['#3A2312', '#0F172A'],
+                description: 'Rich dark chocolate corduroy long-sleeve button down tailored with sharp pleated black trousers and leather shoes.'
+            }
+        ];
+
+        // Global Application State
+        let cart = [];
+        let activeCategory = 'all';
+        let searchQuery = '';
+        let selectedSizes = {};
+
+        // Product Catalog Renderer
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const noResults = document.getElementById('noResults');
+
+            const filtered = products.filter(product => {
+                const matchesCategory = activeCategory === 'all' || product.category === activeCategory || product.tags.includes(activeCategory);
+                const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      product.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = filtered.map(product => {
+                const currentSize = selectedSizes[product.id] || 'M';
+                return `
+                <div class="product-card bg-brand-900 border border-brand-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <!-- Outfit Image -->
+                        <div class="relative aspect-[3/4] bg-brand-800 overflow-hidden">
+                            <img src="${product.imageJpg}" 
+                                 alt="${product.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='${product.imagePng}'; this.onerror=function(){this.src='https://placehold.co/400x533/2A1E17/FFF?text=${encodeURIComponent(product.name)}';}">
+                            <span class="absolute top-3 left-3 bg-brand-900/90 backdrop-blur-md text-brand-300 text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-brand-700/50">
+                                ${product.category}
+                            </span>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5 space-y-3">
+                            <div class="flex items-start justify-between">
+                                <h3 class="serif text-lg font-bold text-white group-hover:text-brand-300 transition">${product.name}</h3>
+                                <span class="serif text-base font-semibold text-brand-400">₱${product.price.toFixed(2)} </span>
+                            </div>
+                            <p class="text-brand-300 text-xs line-clamp-2 font-light leading-relaxed">${product.description}</p>
+                            
+                            <!-- Available Variations: Color Swatches & Sizes -->
+                            <div class="pt-2 border-t border-brand-800/80 space-y-2">
+                                <div class="flex items-center justify-between text-[11px] text-brand-400">
+                                    <span>Select Size:</span>
+                                    <div class="flex gap-1">
+                                        ${['S', 'M', 'L', 'XL'].map(sz => `
+                                            <button onclick="selectSize('${product.id}', '${sz}')" class="w-6 h-6 rounded text-[10px] font-bold border transition ${currentSize === sz ? 'bg-brand-500 text-white border-brand-500' : 'bg-brand-800 text-brand-300 border-brand-700 hover:border-brand-500'}">
+                                                ${sz}
+                                            </button>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add To Bag Button -->
+                    <div class="p-5 pt-0">
+                        <button onclick="addToCart('${product.id}')" class="w-full py-3 bg-brand-800 hover:bg-brand-500 text-brand-100 hover:text-white font-medium rounded-xl transition duration-300 flex items-center justify-center space-x-2 text-xs uppercase tracking-wider border border-brand-700/60 hover:border-brand-500">
+                            <i class="fa-solid fa-bag-shopping text-xs"></i>
+                            <span>Add To Bag (${currentSize})</span>
+                        </button>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // Selection Handlers
+        function selectSize(productId, size) {
+            selectedSizes[productId] = size;
+            renderProducts();
+        }
+
+        // Category Filtering
+        function filterCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-white', 'border-brand-500');
+                btn.classList.add('bg-brand-800/40', 'text-brand-300', 'border-brand-800');
+            });
+
+            const activeBtn = document.getElementById(`btn-${cat}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-brand-800/40', 'text-brand-300', 'border-brand-800');
+                activeBtn.classList.add('bg-brand-500', 'text-white', 'border-brand-500');
+            }
+
+            renderProducts();
+        }
+
+        // Search Handlers
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value;
+            renderProducts();
+        }
+
+        function handleSearchMobile() {
+            searchQuery = document.getElementById('mobileSearchInput').value;
+            renderProducts();
+        }
+
+        // Navigation Menu Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Shopping Cart Modal Drawer Controls
+        function toggleCartModal() {
+            const modal = document.getElementById('cartModal');
+            const content = document.getElementById('cartContent');
+            
+            if (modal.classList.contains('opacity-0')) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                content.classList.remove('translate-x-full');
+            } else {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                content.classList.add('translate-x-full');
+            }
+        }
+
+        // Cart Actions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const size = selectedSizes[productId] || 'M';
+            const cartItemId = `${productId}-${size}`;
+
+            const existing = cart.find(item => item.cartItemId === cartItemId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, selectedSize: size, cartItemId: cartItemId, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`Added ${product.name} (${size}) to bag`);
+        }
+
+        function updateQuantity(cartItemId, delta) {
+            const item = cart.find(i => i.cartItemId === cartItemId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.cartItemId !== cartItemId);
+            }
+
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const itemsList = document.getElementById('cartItemsList');
+            const subtotalEl = document.getElementById('cartSubtotal');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalCost = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            badge.innerText = totalCount;
+            if (totalCount > 0) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            if (cart.length === 0) {
+                itemsList.innerHTML = `
+                    <div class="text-center py-16 text-brand-400 space-y-3">
+                        <i class="fa-solid fa-bag-shopping text-4xl"></i>
+                        <p class="text-sm">Your shopping bag is currently empty.</p>
+                    </div>
+                `;
+            } else {
+                itemsList.innerHTML = cart.map(item => `
+                    <div class="flex items-center space-x-4 bg-brand-800/40 p-3 rounded-xl border border-brand-800">
+                        <img src="${item.imageJpg}" alt="${item.name}" class="w-16 h-20 object-cover rounded-lg bg-brand-800" onerror="this.onerror=null; this.src='${item.imagePng}'; this.onerror=function(){this.src='https://placehold.co/100x100/1A110B/FAF8F5?text=Item';}">
+                        <div class="flex-grow">
+                            <h4 class="serif text-xs font-bold text-white">${item.name}</h4>
+                            <p class="text-[11px] text-brand-400 mt-0.5">Size: <span class="text-white">${item.selectedSize}</span> | ${item.price.toFixed(2)}</p>
+                            <div class="flex items-center space-x-3 mt-2">
+                                <button onclick="updateQuantity('${item.cartItemId}', -1)" class="w-5 h-5 rounded bg-brand-700/60 text-brand-200 hover:text-white flex items-center justify-center text-xs">-</button>
+                                <span class="text-xs text-brand-100 font-medium">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.cartItemId}', 1)" class="w-5 h-5 rounded bg-brand-700/60 text-brand-200 hover:text-white flex items-center justify-center text-xs">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-semibold text-brand-200">${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            subtotalEl.innerText = `${totalCost.toFixed(2)}`;
+        }
+
+        // Checkout & Order Form Dialogs
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showToast("Your shopping bag is empty!");
+                return;
+            }
+            toggleCartModal();
+            const totalCost = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('checkoutTotalAmount').innerText = `₱{totalCost.toFixed(2)}`;
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function placeOrder(e) {
+            e.preventDefault();
+            const method = document.getElementById('paymentMethodSelect').value;
+            closeCheckoutModal();
+            cart = [];
+            updateCartUI();
+            showToast(`Order placed successfully via ${method}! Thank you.`);
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast("Your inquiry has been sent to support@warmstitch.com!");
+        }
+
+        // Notification Toast Engine
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Window Initialization
+        window.onload = function() {
+            renderProducts();
+            updateCartUI();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Nothing in this project needs installing, but just in case
+node_modules/
