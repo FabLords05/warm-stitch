@@ -37,7 +37,7 @@ WS.products = [
     name: 'White Cropped Cape Top',
     gender: 'women',
     type: 'top',
-    image: null,
+    image: 'assets/images/products/white-cape-top.jpg',
     prices: { S: 1850, M: 1950, L: 2050, XL: 2200 },
     description: 'Elegant white cropped cape-style top with a refined mandarin collar, short cape sleeves, and four distinctive sculptural gold-tone decorative buttons down the front. Modern, modest, and eye-catching.'
   },
@@ -55,7 +55,7 @@ WS.products = [
     name: 'Ivory Satin A-Line Midi Skirt',
     gender: 'women',
     type: 'bottom',
-    image: null,
+    image: 'assets/images/products/ivory-satin-skirt.jpg',
     prices: { S: 2100, M: 2250, L: 2400, XL: 2600 },
     description: 'Luxurious ivory satin full A-line midi skirt with a wrapped waistband and a dramatic oversized bow detail at the side. Silky, flowing fabric with a timeless, romantic silhouette.'
   },
