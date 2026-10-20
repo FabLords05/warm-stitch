@@ -111,7 +111,8 @@ WS.products = [
     name: 'Lymio Baggy Jeans for Men',
     gender: 'men',
     type: 'bottom',
-    image: null,
+    image: 'assets/images/products/lymio-baggy-jeans.jpg',  // NOTE: currently the same
+    // photograph as Baggy Denim Streetwear. Drop a distinct file in to replace it.
     prices: { S: 1300, M: 1550, L: 1850, XL: 2450 },
     description: 'Straight-fit denim jeans with a relaxed, oversized style, perfect for casual streetwear and everyday comfort.'
   },
