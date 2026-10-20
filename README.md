@@ -106,12 +106,16 @@ popup and in the bag. Save the file and refresh the page.
 
 ### Adding a photo to a product that doesn't have one
 
-Four products currently show a cream **"Photo coming soon"** tile instead of a photograph:
+Three products currently show a cream **"Photo coming soon"** tile instead of a photograph:
 
-- White Cropped Cape Top
-- Ivory Satin A-Line Midi Skirt
-- Lymio Baggy Jeans for Men
-- CHANGE Status Quo Shirt & Shorts Set
+| Product | Expected filename |
+|---|---|
+| White Cropped Cape Top | `white-cape-top.jpg` |
+| Ivory Satin A-Line Midi Skirt | `ivory-satin-skirt.jpg` |
+| Lymio Baggy Jeans for Men | `lymio-baggy-jeans.jpg` |
+
+Send the original image files rather than screenshots of them — a photo cropped out of a chat
+screenshot comes through at roughly 150 px wide, which looks blurry at the size the cards display.
 
 To give one a real photo:
 
