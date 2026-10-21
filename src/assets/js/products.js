@@ -29,7 +29,7 @@ WS.products = [
     gender: 'women',
     type: 'top',
     image: 'assets/images/products/rosa-top.jpg',
-    prices: { S: 289, M: 289, L: 309, XL: 399 },
+    prices: { S: 289, M: 299, L: 309, XL: 399 },
     description: 'A lovely cream top featuring a square neckline, puff sleeves, and delicate button details. Its feminine design makes it easy to style with floral pants, jeans, skirts, or your favorite everyday bottoms.'
   },
   {
@@ -47,7 +47,7 @@ WS.products = [
     gender: 'women',
     type: 'bottom',
     image: 'assets/images/products/rosebud-floral-pants.jpg',
-    prices: { S: 349, M: 349, L: 369, XL: 420 },
+    prices: { S: 349, M: 359, L: 369, XL: 420 },
     description: 'Featuring a soft cream base with delicate pink rose prints and tiny green leaves, these floral pants bring a charming touch to your everyday outfit. Pair them with a plain top for a cute, coordinated, and effortlessly stylish look.'
   },
   {
@@ -94,7 +94,7 @@ WS.products = [
     gender: 'men',
     type: 'top',
     image: 'assets/images/products/cream-plaid-layered-casual.jpg',
-    prices: { S: 850, M: 850, L: 900, XL: 950 },
+    prices: { S: 850, M: 875, L: 900, XL: 950 },
     description: 'Beige-and-white plaid flannel over a white T-shirt for a cozy, stylish, everyday look.'
   },
   {
