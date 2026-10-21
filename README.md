@@ -106,12 +106,7 @@ popup and in the bag. Save the file and refresh the page.
 
 ### Adding a photo to a product that doesn't have one
 
-All 12 products now have a photograph.
-
-**One thing to be aware of:** *Lymio Baggy Jeans for Men* and *Baggy Denim Streetwear* currently
-show the **same photograph**. They are two separate products at different prices, so if you have a
-distinct photo of the Lymio jeans, replace `assets/images/products/lymio-baggy-jeans.jpg` with it —
-nothing else needs changing, and the other product is unaffected.
+All 12 products now have their own photograph.
 
 When sending photos, send the original image files rather than screenshots of them. A photo cropped
 out of a chat screenshot comes through at roughly 150 px wide, which looks blurry at the size the
